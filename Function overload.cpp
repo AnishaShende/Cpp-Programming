@@ -12,11 +12,11 @@ class info{
         void data(char [], int, float, char []);
 };
 void info::data(char sname[50], int sid, char sbranch[50]){
-    cout<<"Name of the student ifacultys : "<<sname<<endl;
+    cout<<"Name of the student is : "<<sname<<endl;
     cout<<"ID of the student is : "<<sid<<endl;
     cout<<"Branch of the student is : "<<sbranch<<endl;
 }
-void info::data(char fname[50], int, int sid, char sbranch[50]){
+void info::data(char fname[50], int fid, float fsalary, char fbranch[50]){
     cout<<"Name of the faculty is : "<<fname<<endl;
     cout<<"ID of the faculty is : "<<fid<<endl;
     cout<<"Salary of the faculty is : "<<fsalary<<endl;
