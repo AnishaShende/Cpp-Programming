@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class student
+{
+    string name;
+public:
+    student(string n)
+    {
+        name = n;
+    }
+    student()
+    {
+        name = "Unknown";
+    }
+    void showdata()
+    {
+        cout <<"Name of the student is : "<< name << endl;
+    }
+};
+
+int main()
+{
+    cout<<"Hello World"<<endl;
+    student sd1("Anisha");
+    student sd2;
+    sd1.showdata();
+    sd2.showdata();
+    return 0;
+}
+
