@@ -4,7 +4,7 @@ using namespace std;
 class ECI{
     public:
         void display(){
-            cout<<"Welcome to ECI"<<endl;
+            cout<<"------Welcome to ECI------"<<endl;
             cout<<"Party 1 : Congress"<<endl;
             cout<<"Party 2 : BJP"<<endl;
             cout<<"Party 3 : AAP"<<endl;
@@ -12,78 +12,85 @@ class ECI{
 };
 class Pune{
     public:
-    int p1, p2, p3, nota, vttl;
+    int ap1, ap2, ap3, anota, avttl;
     public:
-        void display(){
+        void adisplay(){
             do{
                 cout<<"Enter votes for Congress in pune : ";
-                cin>>p1;
+                cin>>ap1;
                 cout<<"Enter votes for BJP in pune : ";
-                cin>>p2;
+                cin>>ap2;
                 cout<<"Enter votes for AAP in pune : ";
-                cin>>p3;
+                cin>>ap3;
                 cout<<"Enter votes for NOTA in pune : ";
-                cin>>nota;
-                vttl = p1 + p2 + p3 + nota;
+                cin>>anota;
+                avttl = ap1 + ap2 + ap3 + anota;
+                cout<<"Values entered are : "<<ap1<<" "<<ap2<<" "<<ap3<<" "<<anota<<endl;
             }
-            while(vttl != 1000);
+            while(avttl != 1000);
         }
     
 };
 class Nagpur{
     public:
-    int p1, p2, p3, nota, vttl;
+    int bp1, bp2, bp3, bnota, bvttl;
     public:
-        void display(){
+        void bdisplay(){
             do{
                 cout<<"Enter votes for Congress in nagpur : ";
-                cin>>p1;
+                cin>>bp1;
                 cout<<"Enter votes for BJP in nagpur : ";
-                cin>>p2;
+                cin>>bp2;
                 cout<<"Enter votes for AAP in nagpur : ";
-                cin>>p3;
+                cin>>bp3;
                 cout<<"Enter votes for NOTA in nagpur : ";
-                cin>>nota;
-                vttl = p1 + p2 + p3 + nota;
+                cin>>bnota;
+                bvttl = bp1 + bp2 + bp3 + bnota;
+                cout<<"Values entered are : "<<bp1<<" "<<bp2<<" "<<bp3<<" "<<bnota<<endl;
             }
-            while(vttl != 1000);
+            while(bvttl != 1000);
         }
 };
 class Nashik{
     public:
-    int p1, p2, p3, nota, vttl;
+    int cp1, cp2, cp3, cnota, cvttl;
     public:
-        void display(){
+        void cdisplay(){
             do{
                 cout<<"Enter votes for Congress in nashik : ";
-                cin>>p1;
+                cin>>cp1;
                 cout<<"Enter votes for BJP in nashik : ";
-                cin>>p2;
+                cin>>cp2;
                 cout<<"Enter votes for AAP in nashik : ";
-                cin>>p3;
+                cin>>cp3;
                 cout<<"Enter votes for NOTA in nashik : ";
-                cin>>nota;
-                vttl = p1 + p2 + p3 + nota;
+                cin>>cnota;
+                cvttl = cp1 + cp2 + cp3 + cnota;
+                cout<<"Values entered are : "<<cp1<<" "<<cp2<<" "<<cp3<<" "<<cnota<<endl;
             }
-            while(vttl != 1000);
+            while(cvttl != 1000);
         }
 };
 class Winning:public Pune, public Nagpur, public Nashik{
     public:
     int p1ttl, p2ttl, p3ttl, notattl;
     public:
-        void display(){
-            p1ttl = Pune::p1+Nagpur::p1+Nashik::p1;
-            p2ttl = Pune::p2+Nagpur::p2+Nashik::p2;
-            p3ttl = Pune::p3+Nagpur::p3+Nashik::p3;
-            notattl = Pune::nota+Nagpur::nota+Nashik::nota;
+        void windisplay(){
+            p1ttl = ap1+bp1+cp1;
+            p2ttl = ap2+bp2+cp2;
+            p3ttl = ap3+bp3+cp3;
+            notattl = anota+bnota+cnota;
+            cout<<"P1ttl = "<<p1ttl<<endl;
+            cout<<"P2ttl = "<<p2ttl<<endl;
+            cout<<"P3ttl = "<<p3ttl<<endl;
+            cout<<"notattl = "<<notattl<<endl;
             if(p1ttl >= p2ttl && p1ttl >= p3ttl){
                 cout<<"Winning party in maharashtra is Congress with "<<p1ttl<<" votes with the winning percentage of "<<p1ttl/3000*100<<"%"<<endl;
             }
             else if(p2ttl >= p1ttl && p2ttl >= p3ttl){
                 cout<<"Winning party in maharashtra is BJP with "<<p2ttl<<" votes with the winning percentage of "<<p2ttl/3000*100<<"%"<<endl;
             }
-            else if(p2ttl >= p1ttl && p3ttl >= p3ttl){
+            else if(p3ttl >= p1ttl && p3ttl >= p2ttl){
                 cout<<"Winning party in maharashtra is AAP with "<<p3ttl<<" votes with the winning percentage of "<<p3ttl/3000*100<<"%"<<endl;
             }
             else{
@@ -100,9 +107,9 @@ int main()
     Nashik obj3;
     Winning objwin;
     obj.display();
-    obj1.display();
-    obj2.display();
-    obj3.display();
-    objwin.display();
+    obj1.adisplay();
+    obj2.bdisplay();
+    obj3.cdisplay();
+    objwin.windisplay();
     return 0;
 }
